@@ -1,14 +1,3 @@
-Metadata-Version: 2.1
-Name: placeholders
-Version: 2.0
-Summary: Create placeholder images by embedding keywords into regular jpg images.
-Home-page: https://github.com/austinbrown34/placeholders
-Author: Austin Brown
-Author-email: austinbrown34@gmail.com
-Keywords: image,exif,jpg
-Description-Content-Type: text/markdown
-License-File: LICENSE
-
 # Placeholders
 
 A command-line tool to set and get variables embedded in image metadata

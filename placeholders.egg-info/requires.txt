@@ -1,4 +1,2 @@
-Click
-pyyaml
+Pillow
 piexif
-pillow

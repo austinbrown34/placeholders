@@ -1,0 +1,43 @@
+#!/usr/bin/env python
+
+import argparse
+from placeholders.controls import get_tag, get_tags, set_tag, set_tags
+import sys
+import os
+
+
+def main(argv):
+    parser = argparse.ArgumentParser(
+        description="""
+        1. Get a tag from an image: placeholders <path to image>
+        2. Get all tags from all images in a directory: placeholders <path to directory>
+        3. Set a tag in an image: placeholders <path to image> --tag <tag>
+        4. Set all tags defined in yaml file: placeholders <path to yaml file>
+        """
+    )
+
+    parser.add_argument(
+        'path',
+        help='path to image, directory, or yaml file'
+    )
+    parser.add_argument(
+        '--tag',
+        help='tag to set',
+        default=None
+    )
+
+    args = parser.parse_args()
+
+    if args.tag:
+        set_tag(args.path, args.tag)
+    else:
+        if os.path.isdir(args.path):
+            get_tags(args.path)
+        elif args.path.endswith('.yaml') or args.path.endswith('.yml'):
+            set_tags(args.path)
+        else:
+            get_tag(args.path)
+
+    
+if __name__ == '__main__':
+    main(sys.argv)
