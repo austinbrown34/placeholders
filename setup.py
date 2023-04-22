@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name='placeholders',
-    version='2.0',
+    version='2.1',
     description='Create placeholder images by embedding keywords into regular jpg images.',
     long_description=long_description,
     long_description_content_type="text/markdown",
